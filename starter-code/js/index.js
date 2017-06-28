@@ -8,6 +8,5 @@ var objects = new Objects();
 $(document).ready(function() {
   selector.moveSelector();
   selector.stop();
-  objects.randomObjectsRight();
-  objects.randomObjectsLeft();
+  objects.randomObjects();
 });

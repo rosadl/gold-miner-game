@@ -6,6 +6,7 @@ function Selector() {
   var intervalGrow;
   var intervalRestart;
   var intervalDropGold;
+  var i = 0;
 }
 
 Selector.prototype.moveSelector = function() {
@@ -74,20 +75,21 @@ Selector.prototype.growSel = function() {
       clearInterval(intervalGrow);
       that.restartSelector();
     } else {
-      for (var i = 0; i <= arrayPositions.length; i++) {
-        console.log(arrayAngles[i]);
-        console.log(arrayPositions[i]);
+      for (i = 0; i <= arrayPositions.length; i++) {
 
-        if ((arrayPositions[i] + 5) >= that.grow && that.grow >= (arrayPositions[i] - 5) && arrayAngles[i] == that.grade) {
+        if ((arrayPositions[i] + 10) >= that.grow && that.grow >= (arrayPositions[i] - 10) && (arrayAngles[i] + 2) >= that.grade && that.grade >= (arrayAngles[i] - 2)) {
           clearInterval(intervalGrow);
           alert("atrapado");
+          console.log(arrayAngles);
+          delete arrayPositions[i];
+          delete arrayAngles[i];
+            $("#gold" + i).remove();
           that.restartSelector();
-          $("#gold" + i).css("margin-top", "-50px");
-          $("#gold" + i).css("margin-left", "0px");
         } else {
           that.grow += 1;
           $("#selector").css("height", parseInt(that.grow) + "px");
         }
+
       }
 
     }
@@ -95,11 +97,7 @@ Selector.prototype.growSel = function() {
   }, 5);
 
 };
-// Selector.prototype.dropObjects = function(){
-//   intervalDropGold = setInterval(function(){
-//     arrayPositions[i] -=1;
-//   }, 5);
-// };
+
 Selector.prototype.restartSelector = function() {
   var that = this;
 

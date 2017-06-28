@@ -1,0 +1,26 @@
+#miner {
+  width: 1200px;
+  height: 150px;
+  background-color: #45BBEA;
+}
+
+#board {
+  width: 1200px;
+  height: 450px;
+  background-color: #A58452;
+}
+
+#selector {
+  height: 50px;
+  width: 5px;
+  background-color: black;
+  position: absolute;
+  margin-left: 600px;
+  transform-origin: top;
+  transform: rotate(0deg);
+}
+
+.gold {
+  height: 50px;
+  position: absolute;
+}

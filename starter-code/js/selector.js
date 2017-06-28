@@ -5,6 +5,7 @@ function Selector() {
   var intervalGrade;
   var intervalGrow;
   var intervalRestart;
+  var intervalDropGold;
 }
 
 Selector.prototype.moveSelector = function() {
@@ -45,19 +46,19 @@ Selector.prototype.stop = function() {
   }
   addEventListener("keydown", stopSelector);
 };
-Selector.prototype._getCatetoContSide = function(that){
+Selector.prototype._getCatetoContSide = function(that) {
   return Math.cos((90 - that.grade) * Math.PI / 180) * that.grow;
 };
 
-Selector.prototype._getcatetoBottom = function(that){
+Selector.prototype._getcatetoBottom = function(that) {
   return Math.cos((that.grade) * Math.PI / 180) * that.grow;
 };
 
-Selector.prototype._hasTouchedSideLimits = function(catetoContSide){
+Selector.prototype._hasTouchedSideLimits = function(catetoContSide) {
   return catetoContSide >= 600 || -1 * catetoContSide >= 600;
 };
 
-Selector.prototype._hasTouchedTheBottom = function(catetoContBottom){
+Selector.prototype._hasTouchedTheBottom = function(catetoContBottom) {
   return catetoContBottom >= 450;
 };
 
@@ -76,9 +77,13 @@ Selector.prototype.growSel = function() {
       for (var i = 0; i <= arrayPositions.length; i++) {
         console.log(arrayAngles[i]);
         console.log(arrayPositions[i]);
-        if ((arrayPositions[i]+5)>=that.grow && that.grow >= (arrayPositions[i]-5) && arrayAngles[i]==that.grade) {
+
+        if ((arrayPositions[i] + 5) >= that.grow && that.grow >= (arrayPositions[i] - 5) && arrayAngles[i] == that.grade) {
           clearInterval(intervalGrow);
           alert("atrapado");
+          that.restartSelector();
+          $("#gold" + i).css("margin-top", "-50px");
+          $("#gold" + i).css("margin-left", "0px");
         } else {
           that.grow += 1;
           $("#selector").css("height", parseInt(that.grow) + "px");
@@ -90,15 +95,20 @@ Selector.prototype.growSel = function() {
   }, 5);
 
 };
-
+// Selector.prototype.dropObjects = function(){
+//   intervalDropGold = setInterval(function(){
+//     arrayPositions[i] -=1;
+//   }, 5);
+// };
 Selector.prototype.restartSelector = function() {
   var that = this;
 
   intervalRestart = setInterval(function() {
     if (that.grow == 50) {
-      that.grade =0;
+      that.grade = 0;
       $("#selector").css("transform", "rotate(" + parseInt(that.grade) + "deg)");
       clearInterval(intervalRestart);
+      that.moveSelector();
     } else {
       that.grow -= 1;
       $("#selector").css("height", parseInt(that.grow) + "px");

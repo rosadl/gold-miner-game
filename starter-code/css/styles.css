@@ -65,3 +65,6 @@ body {
   height: 50px;
   position: absolute;
 }
+.gameOver {
+  height: 400px;
+}

@@ -23,7 +23,7 @@ Objects.prototype.randomGolds = function() {
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
     var randomCatetoOpuesto = ((Math.tan(randomAngle)) * randomDistancia);
     var randomHipotenusa = Math.floor(Math.sqrt((randomCatetoOpuesto * randomCatetoOpuesto) + (randomDistancia * randomDistancia)));
-    var newGold = $('#board').append('<img class="gold" id="gold' + i + '"src="./images/pepita.png"></img>');
+    var newGold = $('#board').append('<img class="gold object" id="gold' + i + '"src="./images/pepita.png"></img>');
     $("#gold" + i).css("margin-top", randomDistancia);
     $("#gold" + i).css("margin-left", randomCatetoOpuesto);
     AnglesGolds.push(randomAngleDeg);
@@ -42,7 +42,7 @@ Objects.prototype.randomDiamonts = function() {
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
     var randomCatetoOpuesto = ((Math.tan(randomAngle)) * randomDistancia);
     var randomHipotenusa = Math.floor(Math.sqrt((randomCatetoOpuesto * randomCatetoOpuesto) + (randomDistancia * randomDistancia)));
-    var newDiamont = $('#board').append('<img class="diamont" id="diamont' + i + '"src="./images/diamond.png"></img>');
+    var newDiamont = $('#board').append('<img class="diamont object" id="diamont' + i + '"src="./images/diamond.png"></img>');
     $("#diamont" + i).css("margin-top", randomDistancia);
     $("#diamont" + i).css("margin-left", randomCatetoOpuesto);
     AnglesDiamonts.push(randomAngleDeg);
@@ -61,7 +61,7 @@ Objects.prototype.randomDynamite = function() {
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
     var randomCatetoOpuesto = ((Math.tan(randomAngle)) * randomDistancia);
     var randomHipotenusa = Math.floor(Math.sqrt((randomCatetoOpuesto * randomCatetoOpuesto) + (randomDistancia * randomDistancia)));
-    var newDynamite = $('#board').append('<img class="dynamite" id="dynamite' + i + '"src="./images/dynamite.png"></img>');
+    var newDynamite = $('#board').append('<img class="dynamite object" id="dynamite' + i + '"src="./images/dynamite.png"></img>');
     $("#dynamite" + i).css("margin-top", randomDistancia);
     $("#dynamite" + i).css("margin-left", randomCatetoOpuesto);
     AnglesDynamites.push(randomAngleDeg);

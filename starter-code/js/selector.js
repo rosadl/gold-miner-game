@@ -160,20 +160,30 @@ Selector.prototype.removeBoom = function() {
 };
 
 Selector.prototype.Timer = function() {
-that = this;
-that.time=63;
+  that = this;
+  that.time = 62;
   var intervalTime = setInterval(function() {
-    if (that.time >=0) {
+    if (that.time >= 0) {
       $("h2.time").html("Time: " + that.time);
 
-    } else{
-      alert("Game Over!!");
+    } else {
+      $('#board').append('<img class="gameOver" src="./images/game-over.png"></img>');
       clearInterval(intervalTime);
+      clearInterval(intervalGrade);
     }
-    if (that.time%7===0){
-      alert("hola k ase");
+    if (that.time % 7 === 0) {
+      $(".object").remove();
+      PositionsGolds = [];
+      AnglesGolds = [];
+      AnglesDiamonts = [];
+      PositionsDiamonts = [];
+      AnglesDynamites = [];
+      PositionsDynamites = [];
+      objects.randomGolds();
+      objects.randomDiamonts();
+      objects.randomDynamite();
     }
-that.time--;
+    that.time--;
 
   }, 1000);
 

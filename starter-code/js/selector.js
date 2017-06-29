@@ -2,6 +2,8 @@ function Selector() {
   this.grade = 0;
   this.direction = 1;
   this.grow = 50;
+  this.points = 0;
+  this.timer = 0;
   var intervalGrade;
   var intervalGrow;
   var intervalRestart;
@@ -30,7 +32,7 @@ Selector.prototype.moveSelector = function() {
         }
         break;
     }
-  }, 10);
+  }, 20);
 };
 
 
@@ -81,6 +83,8 @@ Selector.prototype.growSel = function() {
           delete AnglesGolds[i];
           $("#gold" + i).remove();
           that.restartSelector();
+          that.points += 2;
+          $("h2.points").html(that.points + " " + "points");
         } else {
           that.grow += 1;
           $("#selector").css("height", parseInt(that.grow) + "px");
@@ -94,6 +98,8 @@ Selector.prototype.growSel = function() {
           delete PositionsDiamonts[i];
           delete AnglesDiamonts[i];
           $("#diamont" + i).remove();
+          that.points += 5;
+          $("h2.points").html(that.points + " " + "points");
           that.restartSelector();
         } else {
           that.grow += 1;
@@ -109,6 +115,8 @@ Selector.prototype.growSel = function() {
           delete AnglesDynamites[i];
           $("#dynamite" + i).remove();
           $(".miner").remove();
+          that.points -= 5;
+          $("h2.points").html(that.points + " " + "points");
           $('#superior').append('<img class="miner" src="./images/scared.png"></img>');
           $('#board').append('<img class="boom" src="./images/boom.png"></img>');
           that.restartSelector();
@@ -150,11 +158,23 @@ Selector.prototype.removeBoom = function() {
     $('#superior').append('<img class="miner" src="./images/miner.png"></img>');
   }, 1000);
 };
-// Selector.prototype.comeBack = function(){
-//   for (i = 0; i <= PositionsGolds.length; i++) {
-//     if ((PositionsGolds[i] + 5) >= that.grow && that.grow >= (PositionsGolds[i] - 5) && (AnglesGolds[i] + 10) >= that.grade && that.grade >= (AnglesGolds[i] - 10)) {
-//       setInterval=function{
-//
-//         }, 10);
-//     }
-// };
+
+Selector.prototype.Timer = function() {
+that = this;
+that.time=63;
+  var intervalTime = setInterval(function() {
+    if (that.time >=0) {
+      $("h2.time").html("Time: " + that.time);
+
+    } else{
+      alert("Game Over!!");
+      clearInterval(intervalTime);
+    }
+    if (that.time%7===0){
+      alert("hola k ase");
+    }
+that.time--;
+
+  }, 1000);
+
+};

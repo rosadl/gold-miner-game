@@ -4,6 +4,7 @@ var AnglesDiamonts = [];
 var PositionsDiamonts = [];
 var AnglesDynamites = [];
 var PositionsDynamites = [];
+
 function Objects() {
   this.dynamite = 0;
   this.gold = 0;
@@ -16,18 +17,18 @@ Objects.prototype.randomGolds = function() {
   this.gold = Math.floor((Math.random() * 5));
   for (var i = 0; i <= this.gold; i++) {
     // coordenada "distancia"
-var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
+    var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
     //coordenada "ángulo"
     var randomAngle = Math.floor(Math.random() * ((Math.PI / 2) - (-(Math.PI / 2)))) + (-(Math.PI / 2));
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
-    var randomCatetoOpuesto =((Math.tan(randomAngle)) * randomDistancia);
+    var randomCatetoOpuesto = ((Math.tan(randomAngle)) * randomDistancia);
     var randomHipotenusa = Math.floor(Math.sqrt((randomCatetoOpuesto * randomCatetoOpuesto) + (randomDistancia * randomDistancia)));
     var newGold = $('#board').append('<img class="gold" id="gold' + i + '"src="./images/pepita.png"></img>');
     $("#gold" + i).css("margin-top", randomDistancia);
     $("#gold" + i).css("margin-left", randomCatetoOpuesto);
     AnglesGolds.push(randomAngleDeg);
     PositionsGolds.push(randomHipotenusa);
-    }
+  }
 };
 
 Objects.prototype.randomDiamonts = function() {
@@ -35,7 +36,7 @@ Objects.prototype.randomDiamonts = function() {
   this.diamont = Math.floor((Math.random() * 3));
   for (var i = 0; i <= this.diamont; i++) {
     // coordenada "distancia"
-var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
+    var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
     //coordenada "ángulo"
     var randomAngle = Math.floor(Math.random() * ((Math.PI / 2) - (-(Math.PI / 2)))) + (-(Math.PI / 2));
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
@@ -46,7 +47,7 @@ var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
     $("#diamont" + i).css("margin-left", randomCatetoOpuesto);
     AnglesDiamonts.push(randomAngleDeg);
     PositionsDiamonts.push(randomHipotenusa);
-    }
+  }
 };
 
 Objects.prototype.randomDynamite = function() {
@@ -54,7 +55,7 @@ Objects.prototype.randomDynamite = function() {
   this.dynamite = Math.floor((Math.random() * 5));
   for (var i = 0; i <= this.dynamite; i++) {
     // coordenada "distancia"
-var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
+    var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
     //coordenada "ángulo"
     var randomAngle = Math.floor(Math.random() * ((Math.PI / 2) - (-(Math.PI / 2)))) + (-(Math.PI / 2));
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
@@ -65,5 +66,5 @@ var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
     $("#dynamite" + i).css("margin-left", randomCatetoOpuesto);
     AnglesDynamites.push(randomAngleDeg);
     PositionsDynamites.push(randomHipotenusa);
-    }
+  }
 };

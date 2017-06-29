@@ -1,46 +1,66 @@
-body{
-background-image:url(../images/sand.jpg);
-background-size: cover;
+body {
+  background-image: url(../images/sand.jpg);
+  background-size: cover;
 }
 
 #superior {
   width: 1200px;
   height: 150px;
-  /*background-color: #45BBEA;*/
-
 }
-.miner{
+
+.points {
+  display: inline-block;
+  float: right;
+}
+
+.time {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+}
+
+.start {
+  height: 50px;
+  float: left;
+  margin-top: 10px;
+}
+
+.miner {
   margin-top: 120px;
+  margin-right: 20px;
 }
 
 #board {
   width: 1200px;
   height: 450px;
-  /*background-color: #A58452;*/
 }
 
 #selector {
   height: 50px;
   width: 5px;
-  background-color: black;
+  background-color: #3D3C41;
   position: absolute;
   margin-left: 600px;
   transform-origin: top;
   transform: rotate(0deg);
+  border-radius: 2px;
 }
 
 .gold {
   height: 50px;
   position: absolute;
 }
+
 .diamont {
   height: 20px;
   position: absolute;
 }
+
 .dynamite {
   height: 50px;
   position: absolute;
 }
+
 .boom {
   height: 50px;
   position: absolute;

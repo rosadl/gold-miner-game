@@ -6,9 +6,13 @@ var objects = new Objects();
 
 
 $(document).ready(function() {
-  selector.moveSelector();
-  selector.stop();
-  objects.randomGolds();
-  objects.randomDiamonts();
-  objects.randomDynamite();
+  $(".start").click(function(){
+    selector.Timer();
+    selector.moveSelector();
+    selector.stop();
+    objects.randomGolds();
+    objects.randomDiamonts();
+    objects.randomDynamite();
+});
+
 });

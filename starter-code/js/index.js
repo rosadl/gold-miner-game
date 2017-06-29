@@ -8,5 +8,7 @@ var objects = new Objects();
 $(document).ready(function() {
   selector.moveSelector();
   selector.stop();
-  objects.randomObjects();
+  objects.randomGolds();
+  objects.randomDiamonts();
+  objects.randomDynamite();
 });

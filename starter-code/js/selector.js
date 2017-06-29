@@ -64,8 +64,6 @@ Selector.prototype._hasTouchedTheBottom = function(catetoContBottom) {
 };
 
 Selector.prototype.growSel = function() {
-  // console.log(arrayPositions);
-  // console.log(that.grade);
   var that = this;
   intervalGrow = setInterval(function() {
     var catetoContSide = that._getCatetoContSide(that);
@@ -74,15 +72,13 @@ Selector.prototype.growSel = function() {
     if (that._hasTouchedSideLimits(catetoContSide) || that._hasTouchedTheBottom(catetoContBottom)) {
       clearInterval(intervalGrow);
       that.restartSelector();
-    } else {
-      for (i = 0; i <= arrayPositions.length; i++) {
+    } else{
+      for (i = 0; i <= PositionsGolds.length; i++) {
 
-        if ((arrayPositions[i] + 10) >= that.grow && that.grow >= (arrayPositions[i] - 10) && (arrayAngles[i] + 2) >= that.grade && that.grade >= (arrayAngles[i] - 2)) {
+        if ((PositionsGolds[i] + 5) >= that.grow && that.grow >= (PositionsGolds[i] - 5) && (AnglesGolds[i] + 2) >= that.grade && that.grade >= (AnglesGolds[i] - 2)) {
           clearInterval(intervalGrow);
-          alert("atrapado");
-          console.log(arrayAngles);
-          delete arrayPositions[i];
-          delete arrayAngles[i];
+          delete PositionsGolds[i];
+          delete AnglesGolds[i];
             $("#gold" + i).remove();
           that.restartSelector();
         } else {
@@ -91,7 +87,36 @@ Selector.prototype.growSel = function() {
         }
 
       }
+      for (i = 0; i <= PositionsDiamonts.length; i++) {
 
+        if ((PositionsDiamonts[i] + 5) >= that.grow && that.grow >= (PositionsDiamonts[i] - 5) && (AnglesDiamonts[i] + 2) >= that.grade && that.grade >= (AnglesDiamonts[i] - 2)) {
+          clearInterval(intervalGrow);
+          delete PositionsDiamonts[i];
+          delete AnglesDiamonts[i];
+            $("#diamont" + i).remove();
+          that.restartSelector();
+        } else {
+          that.grow += 1;
+          $("#selector").css("height", parseInt(that.grow) + "px");
+        }
+
+      }
+      for (i = 0; i <= PositionsDynamites.length; i++) {
+
+        if ((PositionsDynamites[i] + 5) >= that.grow && that.grow >= (PositionsDynamites[i] - 5) && (AnglesDynamites[i] + 2) >= that.grade && that.grade >= (AnglesDynamites[i] - 2)) {
+          clearInterval(intervalGrow);
+          delete PositionsDynamites[i];
+          delete AnglesDynamites[i];
+            $("#dynamite" + i).remove();
+            $('#board').append('<img class="boom" src="./images/boom.png"></img>');
+          that.restartSelector();
+            that.removeBoom();
+        } else {
+          that.grow += 1;
+          $("#selector").css("height", parseInt(that.grow) + "px");
+        }
+
+      }
     }
 
   }, 5);
@@ -114,4 +139,10 @@ Selector.prototype.restartSelector = function() {
 
   }, 5);
 
+};
+Selector.prototype.removeBoom = function(){
+  console.log("entrando funcion");
+  setTimeout(function(){
+     $(".boom").remove();
+   }, 1000);
 };

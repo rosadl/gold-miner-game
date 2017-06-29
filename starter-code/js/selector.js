@@ -14,7 +14,7 @@ Selector.prototype.moveSelector = function() {
   intervalGrade = setInterval(function() {
     switch (that.direction) {
       case 1:
-        that.grade += 30;
+        that.grade += 1;
         $("#selector").css("transform", "rotate(" + parseInt(that.grade) + "deg)");
         console.log(that.grade);
         if (that.grade > 80) {
@@ -22,7 +22,7 @@ Selector.prototype.moveSelector = function() {
         }
         break;
       case 2:
-        that.grade -= 30;
+        that.grade -= 1;
         $("#selector").css("transform", "rotate(" + parseInt(that.grade) + "deg)");
         console.log(that.grade);
         if (that.grade < -80) {
@@ -30,7 +30,7 @@ Selector.prototype.moveSelector = function() {
         }
         break;
     }
-  }, 500);
+  }, 10);
 };
 
 
@@ -72,14 +72,14 @@ Selector.prototype.growSel = function() {
     if (that._hasTouchedSideLimits(catetoContSide) || that._hasTouchedTheBottom(catetoContBottom)) {
       clearInterval(intervalGrow);
       that.restartSelector();
-    } else{
+    } else {
       for (i = 0; i <= PositionsGolds.length; i++) {
 
-        if ((PositionsGolds[i] + 5) >= that.grow && that.grow >= (PositionsGolds[i] - 5) && (AnglesGolds[i] + 2) >= that.grade && that.grade >= (AnglesGolds[i] - 2)) {
+        if ((PositionsGolds[i] + 5) >= that.grow && that.grow >= (PositionsGolds[i] - 5) && (AnglesGolds[i] + 10) >= that.grade && that.grade >= (AnglesGolds[i] - 10)) {
           clearInterval(intervalGrow);
           delete PositionsGolds[i];
           delete AnglesGolds[i];
-            $("#gold" + i).remove();
+          $("#gold" + i).remove();
           that.restartSelector();
         } else {
           that.grow += 1;
@@ -89,11 +89,11 @@ Selector.prototype.growSel = function() {
       }
       for (i = 0; i <= PositionsDiamonts.length; i++) {
 
-        if ((PositionsDiamonts[i] + 5) >= that.grow && that.grow >= (PositionsDiamonts[i] - 5) && (AnglesDiamonts[i] + 2) >= that.grade && that.grade >= (AnglesDiamonts[i] - 2)) {
+        if ((PositionsDiamonts[i] + 5) >= that.grow && that.grow >= (PositionsDiamonts[i] - 5) && (AnglesDiamonts[i] + 10) >= that.grade && that.grade >= (AnglesDiamonts[i] - 10)) {
           clearInterval(intervalGrow);
           delete PositionsDiamonts[i];
           delete AnglesDiamonts[i];
-            $("#diamont" + i).remove();
+          $("#diamont" + i).remove();
           that.restartSelector();
         } else {
           that.grow += 1;
@@ -103,14 +103,16 @@ Selector.prototype.growSel = function() {
       }
       for (i = 0; i <= PositionsDynamites.length; i++) {
 
-        if ((PositionsDynamites[i] + 5) >= that.grow && that.grow >= (PositionsDynamites[i] - 5) && (AnglesDynamites[i] + 2) >= that.grade && that.grade >= (AnglesDynamites[i] - 2)) {
+        if ((PositionsDynamites[i] + 5) >= that.grow && that.grow >= (PositionsDynamites[i] - 5) && (AnglesDynamites[i] + 10) >= that.grade && that.grade >= (AnglesDynamites[i] - 10)) {
           clearInterval(intervalGrow);
           delete PositionsDynamites[i];
           delete AnglesDynamites[i];
-            $("#dynamite" + i).remove();
-            $('#board').append('<img class="boom" src="./images/boom.png"></img>');
+          $("#dynamite" + i).remove();
+          $(".miner").remove();
+          $('#superior').append('<img class="miner" src="./images/scared.png"></img>');
+          $('#board').append('<img class="boom" src="./images/boom.png"></img>');
           that.restartSelector();
-            that.removeBoom();
+          that.removeBoom();
         } else {
           that.grow += 1;
           $("#selector").css("height", parseInt(that.grow) + "px");
@@ -140,9 +142,19 @@ Selector.prototype.restartSelector = function() {
   }, 5);
 
 };
-Selector.prototype.removeBoom = function(){
+Selector.prototype.removeBoom = function() {
   console.log("entrando funcion");
-  setTimeout(function(){
-     $(".boom").remove();
-   }, 1000);
+  setTimeout(function() {
+    $(".boom").remove();
+    $(".miner").remove();
+    $('#superior').append('<img class="miner" src="./images/miner.png"></img>');
+  }, 1000);
 };
+// Selector.prototype.comeBack = function(){
+//   for (i = 0; i <= PositionsGolds.length; i++) {
+//     if ((PositionsGolds[i] + 5) >= that.grow && that.grow >= (PositionsGolds[i] - 5) && (AnglesGolds[i] + 10) >= that.grade && that.grade >= (AnglesGolds[i] - 10)) {
+//       setInterval=function{
+//
+//         }, 10);
+//     }
+// };

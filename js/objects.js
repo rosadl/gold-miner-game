@@ -20,6 +20,19 @@ Objects.prototype.randomGolds = function() {
     var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
     //coordenada "ángulo"
     var randomAngle = Math.floor(Math.random() * ((Math.PI / 2) - (-(Math.PI / 2)))) + (-(Math.PI / 2));
+    if (randomAngle >= 0 && randomAngle <= Math.PI * 1 / 18) randomAngle = (Math.PI * 1 / 18);
+    if (randomAngle >= 1 / 18 && randomAngle <= Math.PI * 1 / 9) randomAngle = (Math.PI * 1 / 9);
+    if (randomAngle > 1 / 9 && randomAngle <= Math.PI * 1 / 6) randomAngle = (Math.PI * 1 / 6);
+    if (randomAngle > Math.PI * 1 / 6 && randomAngle <= Math.PI * 2 / 9) randomAngle = (Math.PI * 2 / 9);
+    if (randomAngle > Math.PI * 2 / 9 && randomAngle <= Math.PI * 1 / 3) randomAngle = (Math.PI * 1 / 3);
+    if (randomAngle > Math.PI * 1 / 3 && randomAngle <= Math.PI * 4 / 9) randomAngle = (Math.PI * 4 / 9);
+    if (randomAngle > Math.PI * 4 / 9 && randomAngle <= Math.PI * 1 / 2) randomAngle = (Math.PI * 1 / 2);
+    if (randomAngle >= -Math.PI * 1 / 9 && randomAngle < 0) randomAngle = (-Math.PI * 1 / 9);
+    if (randomAngle >= -Math.PI * 1 / 6 && randomAngle < -Math.PI * 1 / 9) randomAngle = (-Math.PI * 1 / 6);
+    if (randomAngle < -Math.PI * 1 / 6 && randomAngle >= -Math.PI * 2 / 9) randomAngle = (-Math.PI * 2 / 9);
+    if (randomAngle < -Math.PI * 2 / 9 && randomAngle >= -Math.PI * 1 / 3) randomAngle = (-Math.PI * 1 / 3);
+    if (randomAngle < -Math.PI * 1 / 3 && randomAngle >= -Math.PI * 4 / 9) randomAngle = (-Math.PI * 4 / 9);
+    if (randomAngle < -Math.PI * 4 / 9 && randomAngle >= -Math.PI * 1 / 2) randomAngle = (-Math.PI * 1 / 2);
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
     var randomCatetoOpuesto = ((Math.tan(randomAngle)) * randomDistancia);
     var randomHipotenusa = Math.floor(Math.sqrt((randomCatetoOpuesto * randomCatetoOpuesto) + (randomDistancia * randomDistancia)));
@@ -39,6 +52,19 @@ Objects.prototype.randomDiamonts = function() {
     var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
     //coordenada "ángulo"
     var randomAngle = Math.floor(Math.random() * ((Math.PI / 2) - (-(Math.PI / 2)))) + (-(Math.PI / 2));
+    if (randomAngle >= 0 && randomAngle <= Math.PI * 1 / 18) randomAngle = (Math.PI * 1 / 18);
+    if (randomAngle >= 1 / 18 && randomAngle <= Math.PI * 1 / 9) randomAngle = (Math.PI * 1 / 9);
+    if (randomAngle > 1 / 9 && randomAngle <= Math.PI * 1 / 6) randomAngle = (Math.PI * 1 / 6);
+    if (randomAngle > Math.PI * 1 / 6 && randomAngle <= Math.PI * 2 / 9) randomAngle = (Math.PI * 2 / 9);
+    if (randomAngle > Math.PI * 2 / 9 && randomAngle <= Math.PI * 1 / 3) randomAngle = (Math.PI * 1 / 3);
+    if (randomAngle > Math.PI * 1 / 3 && randomAngle <= Math.PI * 4 / 9) randomAngle = (Math.PI * 4 / 9);
+    if (randomAngle > Math.PI * 4 / 9 && randomAngle <= Math.PI * 1 / 2) randomAngle = (Math.PI * 1 / 2);
+    if (randomAngle >= -Math.PI * 1 / 9 && randomAngle < 0) randomAngle = (-Math.PI * 1 / 9);
+    if (randomAngle >= -Math.PI * 1 / 6 && randomAngle < -Math.PI * 1 / 9) randomAngle = (-Math.PI * 1 / 6);
+    if (randomAngle < -Math.PI * 1 / 6 && randomAngle >= -Math.PI * 2 / 9) randomAngle = (-Math.PI * 2 / 9);
+    if (randomAngle < -Math.PI * 2 / 9 && randomAngle >= -Math.PI * 1 / 3) randomAngle = (-Math.PI * 1 / 3);
+    if (randomAngle < -Math.PI * 1 / 3 && randomAngle >= -Math.PI * 4 / 9) randomAngle = (-Math.PI * 4 / 9);
+    if (randomAngle < -Math.PI * 4 / 9 && randomAngle >= -Math.PI * 1 / 2) randomAngle = (-Math.PI * 1 / 2);
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
     var randomCatetoOpuesto = ((Math.tan(randomAngle)) * randomDistancia);
     var randomHipotenusa = Math.floor(Math.sqrt((randomCatetoOpuesto * randomCatetoOpuesto) + (randomDistancia * randomDistancia)));
@@ -58,6 +84,19 @@ Objects.prototype.randomDynamite = function() {
     var randomDistancia = Math.floor(Math.random() * (400 - 100)) + 100;
     //coordenada "ángulo"
     var randomAngle = Math.floor(Math.random() * ((Math.PI / 2) - (-(Math.PI / 2)))) + (-(Math.PI / 2));
+    if (randomAngle >= 0 && randomAngle <= Math.PI * 1 / 18) randomAngle = (Math.PI * 1 / 18);
+    if (randomAngle >= 1 / 18 && randomAngle <= Math.PI * 1 / 9) randomAngle = (Math.PI * 1 / 9);
+    if (randomAngle > 1 / 9 && randomAngle <= Math.PI * 1 / 6) randomAngle = (Math.PI * 1 / 6);
+    if (randomAngle > Math.PI * 1 / 6 && randomAngle <= Math.PI * 2 / 9) randomAngle = (Math.PI * 2 / 9);
+    if (randomAngle > Math.PI * 2 / 9 && randomAngle <= Math.PI * 1 / 3) randomAngle = (Math.PI * 1 / 3);
+    if (randomAngle > Math.PI * 1 / 3 && randomAngle <= Math.PI * 4 / 9) randomAngle = (Math.PI * 4 / 9);
+    if (randomAngle > Math.PI * 4 / 9 && randomAngle <= Math.PI * 1 / 2) randomAngle = (Math.PI * 1 / 2);
+    if (randomAngle >= -Math.PI * 1 / 9 && randomAngle < 0) randomAngle = (-Math.PI * 1 / 9);
+    if (randomAngle >= -Math.PI * 1 / 6 && randomAngle < -Math.PI * 1 / 9) randomAngle = (-Math.PI * 1 / 6);
+    if (randomAngle < -Math.PI * 1 / 6 && randomAngle >= -Math.PI * 2 / 9) randomAngle = (-Math.PI * 2 / 9);
+    if (randomAngle < -Math.PI * 2 / 9 && randomAngle >= -Math.PI * 1 / 3) randomAngle = (-Math.PI * 1 / 3);
+    if (randomAngle < -Math.PI * 1 / 3 && randomAngle >= -Math.PI * 4 / 9) randomAngle = (-Math.PI * 4 / 9);
+    if (randomAngle < -Math.PI * 4 / 9 && randomAngle >= -Math.PI * 1 / 2) randomAngle = (-Math.PI * 1 / 2);
     var randomAngleDeg = -1 * Math.ceil((randomAngle * 180 / Math.PI));
     var randomCatetoOpuesto = ((Math.tan(randomAngle)) * randomDistancia);
     var randomHipotenusa = Math.floor(Math.sqrt((randomCatetoOpuesto * randomCatetoOpuesto) + (randomDistancia * randomDistancia)));

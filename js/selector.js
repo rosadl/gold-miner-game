@@ -77,7 +77,7 @@ Selector.prototype.growSel = function() {
     } else {
       for (i = 0; i <= PositionsGolds.length; i++) {
 
-        if ((PositionsGolds[i] + 5) >= that.grow && that.grow >= (PositionsGolds[i] - 5) && (AnglesGolds[i] + 10) >= that.grade && that.grade >= (AnglesGolds[i] - 10)) {
+        if ((PositionsGolds[i] + 5) >= that.grow && that.grow >= (PositionsGolds[i] - 5) && (AnglesGolds[i] + 7) >= that.grade && that.grade >= (AnglesGolds[i] - 7)) {
           clearInterval(intervalGrow);
           delete PositionsGolds[i];
           delete AnglesGolds[i];
@@ -93,7 +93,7 @@ Selector.prototype.growSel = function() {
       }
       for (i = 0; i <= PositionsDiamonts.length; i++) {
 
-        if ((PositionsDiamonts[i] + 5) >= that.grow && that.grow >= (PositionsDiamonts[i] - 5) && (AnglesDiamonts[i] + 10) >= that.grade && that.grade >= (AnglesDiamonts[i] - 10)) {
+        if ((PositionsDiamonts[i] + 5) >= that.grow && that.grow >= (PositionsDiamonts[i] - 5) && (AnglesDiamonts[i] + 7) >= that.grade && that.grade >= (AnglesDiamonts[i] - 7)) {
           clearInterval(intervalGrow);
           delete PositionsDiamonts[i];
           delete AnglesDiamonts[i];
@@ -109,13 +109,13 @@ Selector.prototype.growSel = function() {
       }
       for (i = 0; i <= PositionsDynamites.length; i++) {
 
-        if ((PositionsDynamites[i] + 5) >= that.grow && that.grow >= (PositionsDynamites[i] - 5) && (AnglesDynamites[i] + 10) >= that.grade && that.grade >= (AnglesDynamites[i] - 10)) {
+        if ((PositionsDynamites[i] + 5) >= that.grow && that.grow >= (PositionsDynamites[i] - 5) && (AnglesDynamites[i] + 7) >= that.grade && that.grade >= (AnglesDynamites[i] - 7)) {
           clearInterval(intervalGrow);
           delete PositionsDynamites[i];
           delete AnglesDynamites[i];
           $("#dynamite" + i).remove();
           $(".miner").remove();
-          that.points -= 5;
+          that.points -= 2;
           $("h2.points").html(that.points + " " + "points");
           $('#superior').append('<img class="miner" src="./images/scared.png"></img>');
           $('#board').append('<img class="boom" src="./images/boom.png"></img>');
